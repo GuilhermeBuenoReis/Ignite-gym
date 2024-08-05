@@ -7,21 +7,20 @@ import {
   ScrollView,
 } from '@gluestack-ui/themed';
 
-import { useNavigation } from '@react-navigation/native';
-
 import BackgroundImage from '@assets/background.png';
 import Logo from '@assets/logo.svg';
 
 import { Input } from '@components/Input';
 import { Button } from '@components/Button';
 
+import { useNavigation } from '@react-navigation/native';
 import { AuthNavigatorRoutesProps } from '@routes/auth-routes';
 
-export function SignIn() {
+export function SignUp() {
   const navigator = useNavigation<AuthNavigatorRoutesProps>();
 
-  function handleAuthAcount() {
-    navigator.navigate('signUp');
+  function handleGoBackLogin() {
+    navigator.navigate('signIn');
   }
 
   return (
@@ -48,31 +47,28 @@ export function SignIn() {
             </Text>
           </Center>
 
-          <Center gap='$2'>
-            <Heading color='$gray100'>Acesse a conta</Heading>
+          <Center gap='$2' flex={1}>
+            <Heading color='$gray100'>Crie sua conta</Heading>
+
+            <Input placeholder='nome' />
 
             <Input
               placeholder='email'
               keyboardType='email-address'
               autoCapitalize='none'
             />
+
             <Input placeholder='senha' secureTextEntry />
 
-            <Button title='Acessar' />
+            <Button title='Criar' />
           </Center>
 
-          <Center flex={1} justifyContent='flex-end' mt='$4'>
-            <Text color='$gray100' fontSize='$sm' fontFamily='$body'>
-              Ainda não tem acesso?
-            </Text>
-
-            <Button
-              title='Criar conta'
-              mt='$3'
-              variant='outline'
-              onPress={handleAuthAcount}
-            />
-          </Center>
+          <Button
+            title='Voltar para o login'
+            variant='outline'
+            mt='$12'
+            onPress={handleGoBackLogin}
+          />
         </VStack>
       </VStack>
     </ScrollView>
