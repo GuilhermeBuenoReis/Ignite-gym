@@ -18,9 +18,9 @@ import ProfileSvg from '@assets/profile.svg';
 
 type AppRoutesProps = {
   home: undefined;
-  exercise: undefined;
   profile: undefined;
   history: undefined;
+  exercise: undefined;
 };
 
 export type AppNavigatorRoutesProps = BottomTabNavigationProp<AppRoutesProps>;
@@ -41,10 +41,8 @@ export function AppRoutes() {
         tabBarStyle: {
           backgroundColor: tokens.colors.gray600,
           borderTopWidth: 0,
-          height: Platform.OS === 'android' ? 'auto' : 96,
-
-          paddingBottom: tokens.space['10'],
-          paddingTop: tokens.space['6'],
+          height: Platform.OS === 'android' ? 76 : 96,
+          alignItems: 'center',
         },
       }}
     >
