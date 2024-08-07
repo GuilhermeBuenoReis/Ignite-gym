@@ -12,8 +12,8 @@ import { useNavigation } from '@react-navigation/native';
 import BackgroundImage from '@assets/background.png';
 import Logo from '@assets/logo.svg';
 
-import { Input } from '@components/Input';
-import { Button } from '@components/Button';
+import { Input } from '@components/input';
+import { Button } from '@components/button';
 
 import { AuthNavigatorRoutesProps } from '@routes/auth-routes';
 
