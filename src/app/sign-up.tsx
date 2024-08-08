@@ -21,6 +21,8 @@ import { Button } from '@components/button';
 import { useNavigation } from '@react-navigation/native';
 import { AuthNavigatorRoutesProps } from '@routes/auth-routes';
 
+import { api } from '../service/api';
+
 type FormDataProps = {
   name: string;
   email: string;
@@ -56,8 +58,10 @@ export function SignUp() {
     navigator.navigate('signIn');
   }
 
-  function handleSignUp(data: FormDataProps) {
-    console.log(data);
+  async function handleSignUp({ name, email, password }: FormDataProps) {
+    const res = await api.post('/users', { name, email, password });
+
+    console.log(res.data);
   }
 
   return (
